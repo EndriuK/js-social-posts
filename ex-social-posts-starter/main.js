@@ -132,3 +132,6 @@ posts.forEach((post) => {
   const postElement = createPost(post);
   container.appendChild(postElement);
 });
+
+// Stampo l'array likedPosts nella console per verificare gli ID salvati
+console.log(likedPosts);
