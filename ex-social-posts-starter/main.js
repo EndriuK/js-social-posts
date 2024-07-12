@@ -62,6 +62,9 @@ const posts = [
   },
 ];
 
+// Array per salvare gli ID dei post a cui è stato messo "Mi Piace"
+const likedPosts = [];
+
 // Funzione per creare un elemento post
 function createPost({ id, content, media, author, likes, created }) {
   const postElement = document.createElement("div");
