@@ -101,3 +101,15 @@ function createPost({ id, content, media, author, likes, created }) {
       </div> 
   </div>
 `;
+
+// Aggiungo l'evento click al bottone "Mi Piace"
+const likeButton = postElement.querySelector(".js-like-button");
+likeButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (!likeButton.classList.contains("like-button--liked")) {
+    likeButton.classList.add("like-button--liked");
+    const likeCounter = postElement.querySelector(`#like-counter-${id}`);
+    likeCounter.textContent = parseInt(likeCounter.textContent) + 1;
+    likedPosts.push(id); 
+  }
+});
