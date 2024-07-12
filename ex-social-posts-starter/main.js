@@ -62,3 +62,42 @@ const posts = [
 function createPost({ id, content, media, author, likes, created }) {
     const postElement = document.createElement("div");
     postElement.className = "post";
+
+    
+  // Inserisco l'HTML del post
+  postElement.innerHTML = `
+  <div class="post__header">
+      <div class="post-meta">                    
+          <div class="post-meta__icon">
+              ${
+                author.image
+                  ? `<img class="profile-pic" src="${author.image}" alt="${author.name}">`
+                  : `<div class="profile-pic-default"><span>${author.name[0]}</span></div>`
+              }
+          </div>
+          <div class="post-meta__data">
+              <div class="post-meta__author">${author.name}</div>
+              <div class="post-meta__time">${new Date(
+                created
+              ).toLocaleDateString()}</div>
+          </div>                    
+      </div>
+  </div>
+  <div class="post__text">${content}</div>
+  <div class="post__image">
+      <img src="${media}" alt="">
+  </div>
+  <div class="post__footer">
+      <div class="likes js-likes">
+          <div class="likes__cta">
+              <a class="like-button js-like-button" href="#" data-postid="${id}">
+                  <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                  <span class="like-button__label">Mi Piace</span>
+              </a>
+          </div>
+          <div class="likes__counter">
+              Piace a <b id="like-counter-${id}" class="js-likes-counter">${likes}</b> persone
+          </div>
+      </div> 
+  </div>
+`;
