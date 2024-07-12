@@ -1,3 +1,4 @@
+// Array di oggetti che rappresentano i post
 const posts = [
     {
         "id": 1,
@@ -55,3 +56,9 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+// Funzione per creare un elemento post
+function createPost({ id, content, media, author, likes, created }) {
+    const postElement = document.createElement("div");
+    postElement.className = "post";
