@@ -120,3 +120,6 @@ function createPost({ id, content, media, author, likes, created }) {
   // Restituisco l'elemento post
   return postElement;
 }
+
+// Seleziono il container dove inserire i post
+const container = document.getElementById("container");
