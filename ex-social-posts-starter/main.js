@@ -126,3 +126,9 @@ function createPost({ id, content, media, author, likes, created }) {
 
 // Seleziono il container dove inserire i post
 const container = document.getElementById("container");
+
+// Creo e aggiungo ogni post al container
+posts.forEach((post) => {
+  const postElement = createPost(post);
+  container.appendChild(postElement);
+});
